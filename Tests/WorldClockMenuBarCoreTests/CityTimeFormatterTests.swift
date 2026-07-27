@@ -29,4 +29,13 @@ final class CityTimeFormatterTests: XCTestCase {
 
         XCTAssertEqual(result, "Madrid — 02:15 (Wed)")
     }
+
+    func test_format_invalidTimezone_returnsErrorMessage() {
+        let city = City(name: "Nowhere", timezone: "Not/AZone")
+        let localTimeZone = TimeZone(identifier: "UTC")!
+
+        let result = CityTimeFormatter.format(city: city, now: Date(timeIntervalSince1970: 0), localTimeZone: localTimeZone)
+
+        XCTAssertEqual(result, "Nowhere — invalid timezone")
+    }
 }

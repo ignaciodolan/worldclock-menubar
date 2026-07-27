@@ -2,7 +2,9 @@ import Foundation
 
 public enum CityTimeFormatter {
     public static func format(city: City, now: Date, localTimeZone: TimeZone) -> String {
-        let cityZone = TimeZone(identifier: city.timezone) ?? TimeZone(identifier: "GMT")!
+        guard let cityZone = TimeZone(identifier: city.timezone) else {
+            return "\(city.name) — invalid timezone"
+        }
 
         let timeFormatter = DateFormatter()
         timeFormatter.dateFormat = "HH:mm"
