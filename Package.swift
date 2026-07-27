@@ -9,6 +9,11 @@ let package = Package(
             name: "WorldClockMenuBarCore",
             path: "Sources/WorldClockMenuBarCore"
         ),
+        .executableTarget(
+            name: "WorldClockMenuBar",
+            dependencies: ["WorldClockMenuBarCore"],
+            path: "Sources/WorldClockMenuBar"
+        ),
         .testTarget(
             name: "WorldClockMenuBarCoreTests",
             dependencies: ["WorldClockMenuBarCore"],
