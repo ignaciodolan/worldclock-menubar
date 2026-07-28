@@ -7,6 +7,7 @@ public enum CityTimeFormatter {
         }
 
         let timeFormatter = DateFormatter()
+        timeFormatter.locale = Locale(identifier: "en_US_POSIX")
         timeFormatter.dateFormat = "HH:mm"
         timeFormatter.timeZone = cityZone
         let timeString = timeFormatter.string(from: now)
@@ -21,6 +22,7 @@ public enum CityTimeFormatter {
 
         guard cityDay.year == localDay.year, cityDay.month == localDay.month, cityDay.day == localDay.day else {
             let weekdayFormatter = DateFormatter()
+            weekdayFormatter.locale = Locale(identifier: "en_US_POSIX")
             weekdayFormatter.dateFormat = "EEE"
             weekdayFormatter.timeZone = cityZone
             let weekday = weekdayFormatter.string(from: now)
