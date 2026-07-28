@@ -2,6 +2,8 @@
 
 A tiny macOS menu bar app. Click the 🌎 icon to see the current time in Madrid, Montevideo, and New York.
 
+![Screenshot](docs/images/screenshot.png)
+
 ## Install
 
 ```bash
